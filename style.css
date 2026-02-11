@@ -206,20 +206,8 @@ border:6px solid #8b5a2b;
 background:#fff;
 }
 
-/* หมู */
-.hero{
-position:relative;
-}
 
-.hero::after{
-content:"🐖  🐖  🐖";
-font-size:60px;
-position:absolute;
-bottom:15px;
-left:50%;
-transform:translateX(-50%);
-pointer-events:none;
-}
+
 
 /* หิมะ */
 .snow{
@@ -429,4 +417,5 @@ animation:eggDrop 8s linear infinite;
 70%{transform:translateY(200px); opacity:1;}
 100%{transform:translateY(260px); opacity:0;}
 }
+
 
