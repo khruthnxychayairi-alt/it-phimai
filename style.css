@@ -59,7 +59,7 @@ box-shadow:0 8px 18px rgba(2,6,23,.05)
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
-}
+
 
 section{padding:56px 0}
 h2{text-align:center}
@@ -160,7 +160,6 @@ margin-top:8px;
 text-align:center;
 margin-top:4px;
 }
-<style>
 .course-list{
     margin: 5px 0;
     padding-left: 18px;
@@ -168,4 +167,266 @@ margin-top:4px;
 .course-list li{
     margin: 3px 0;
 }
-</style>
+
+/* SNOW EFFECT */
+
+
+
+
+
+/* ===== FARM THEME SAFE MODE ===== */
+
+/* ท้องฟ้า + หญ้า */
+body{
+background:linear-gradient(#bfe8ff 0%, #e6f7ff 40%, #9edb88 41%, #6fc25f 100%);
+}
+
+/* header เป็นไม้ */
+header{
+background:#8b5a2b;
+color:white;
+border-bottom:4px solid #5c3b1e;
+}
+
+/* ป้ายคอกหมู */
+.logo{
+background:linear-gradient(135deg,#ff9bb3,#ff6f91);
+}
+
+/* การ์ดไม้ */
+.card{
+background:#fff8ec;
+border:2px solid #c79a63;
+box-shadow:0 8px 18px rgba(92,59,30,.25);
+}
+
+/* รูปครู */
+.teacher img{
+border:6px solid #8b5a2b;
+background:#fff;
+}
+
+/* หมู */
+.hero{
+position:relative;
+}
+
+.hero::after{
+content:"🐖  🐖  🐖";
+font-size:60px;
+position:absolute;
+bottom:15px;
+left:50%;
+transform:translateX(-50%);
+pointer-events:none;
+}
+
+/* หิมะ */
+.snow{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background-image:
+radial-gradient(4px 4px at 20px 30px,#fff,transparent),
+radial-gradient(3px 3px at 40px 70px,#fff,transparent),
+radial-gradient(3px 3px at 90px 40px,#fff,transparent),
+radial-gradient(4px 4px at 130px 80px,#fff,transparent),
+radial-gradient(2px 2px at 160px 30px,#fff,transparent);
+background-repeat:repeat;
+background-size:200px 200px;
+animation:snowFall 20s linear infinite;
+opacity:.8;
+z-index:2;
+}
+
+@keyframes snowFall{
+from{background-position:0 0;}
+to{background-position:0 600px;}
+}
+
+
+
+
+/* ===== ทุ่งหญ้าฟาร์ม ===== */
+body{
+margin:0;
+font-family:"Noto Sans Thai",system-ui,Arial,sans-serif;
+color:#1f2937;
+line-height:1.8;
+font-size:18px;
+position:relative;
+z-index:0;
+
+/* ท้องฟ้า */
+background:
+linear-gradient(#9edbff 0%, #cfefff 45%, #7ed36b 46%, #4caf50 100%);
+}
+
+
+
+/* ลายหญ้า */
+body::before{
+content:"";
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+height:40%;
+background:
+repeating-linear-gradient(
+    -60deg,
+    rgba(0,0,0,0.05) 0px,
+    rgba(0,0,0,0.05) 2px,
+    transparent 2px,
+    transparent 12px
+);
+pointer-events:none;
+z-index:-4;
+}
+
+/* เมฆ */
+body::after{
+content:"☁️   ☁️    ☁️";
+position:fixed;
+top:40px;
+left:0;
+width:100%;
+font-size:60px;
+text-align:center;
+opacity:.8;
+pointer-events:none;
+animation:cloudMove 80s linear infinite;
+z-index:-1;
+}
+
+@keyframes cloudMove{
+from{transform:translateX(-20%);}
+to{transform:translateX(20%);}
+}
+/* ===== รั้วไม้ฟาร์มหมู ===== */
+.fence{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+height:90px;
+pointer-events:none;
+z-index:-3;
+
+/* เสาไม้ */
+background:
+repeating-linear-gradient(
+    90deg,
+    #8b5a2b 0px,
+    #8b5a2b 18px,
+    #5c3b1e 18px,
+    #5c3b1e 22px,
+    transparent 22px,
+    transparent 70px
+);
+}
+
+/* คานไม้แนวนอน */
+.fence::before{
+content:"";
+position:absolute;
+top:20px;
+left:0;
+width:100%;
+height:14px;
+background:#6d4422;
+box-shadow:0 35px 0 #6d4422;
+}
+
+/* ===== หมูเดิน ===== */
+.pig-walk{
+position:fixed;
+bottom:70px;
+left:-120px;
+font-size:70px;
+z-index:-2;
+animation:pigRun 25s linear infinite;
+}
+
+@keyframes pigRun{
+0%{left:-120px; transform:scaleX(1);}
+49%{transform:scaleX(1);}
+50%{left:105%; transform:scaleX(-1);}
+99%{transform:scaleX(-1);}
+100%{left:-120px; transform:scaleX(1);}
+}
+/* ===== โรงนาแดง ===== */
+.barn{
+position:fixed;
+right:60px;
+bottom:95px;
+width:170px;
+height:140px;
+background:#c0392b;
+z-index:-4;
+border:6px solid #7a1f16;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* หลังคา */
+.barn::before{
+content:"";
+position:absolute;
+top:-70px;
+left:-20px;
+width:0;
+height:0;
+border-left:105px solid transparent;
+border-right:105px solid transparent;
+border-bottom:70px solid #8e2b20;
+}
+
+/* ประตู */
+.barn::after{
+content:"";
+position:absolute;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:50px;
+height:80px;
+background:#5c2b12;
+border:4px solid #3a1908;
+}
+/* ===== ไก่เดิน ===== */
+.chicken{
+position:fixed;
+bottom:75px;
+right:-80px;
+font-size:55px;
+z-index:-2;
+animation:chickenWalk 18s linear infinite;
+}
+
+@keyframes chickenWalk{
+0%{right:-80px; transform:scaleX(-1);}
+50%{right:105%; transform:scaleX(1);}
+100%{right:-80px; transform:scaleX(-1);}
+}
+
+/* ไข่ตก */
+.egg{
+position:fixed;
+bottom:120px;
+right:50%;
+font-size:35px;
+opacity:0;
+z-index:-1;
+animation:eggDrop 8s linear infinite;
+}
+
+@keyframes eggDrop{
+0%{transform:translateY(0); opacity:0;}
+20%{opacity:1;}
+70%{transform:translateY(200px); opacity:1;}
+100%{transform:translateY(260px); opacity:0;}
+}
+
