@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#5a9fd4">
+    <meta name="description" content="Sound Sensor Light Control - ควบคุมไฟด้วยเสียง | โครงงาน IoT แผนกเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคพิมาย">
+    <title>Sound Sensor Light Control - แผนกเทคโนโลยีสารสนเทศ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="โครงสร้าง.css">
+</head>
+
+<body>
+    <div class="snow" id="snowContainer" aria-hidden="true"></div>
+    <div class="barn" aria-hidden="true"></div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="brand">
+                    <div class="logo">IT</div>
+                    <div>แผนกเทคโนโลยีสารสนเทศ • วิทยาลัยเทคนิคพิมาย</div>
+                </div>
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false">
+                    <span class="icon-open" aria-hidden="true">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </span>
+                    <span class="icon-close" aria-hidden="true">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </span>
+                </button>
+                <div class="menu" id="mainMenu">
+                    <a href="หน้าแรก.html" class="menu-link">หน้าแรก</a>
+                    <a href="หน้าแรก.html#about" class="menu-link">เกี่ยวกับแผนก</a>
+                    <a href="หน้าแรก.html#courses" class="menu-link">หลักสูตร</a>
+                    <a href="หน้าแรก.html#projects" class="menu-link">ผลงานนักศึกษา</a>
+                    <a href="หน้าแรก.html#teachers" class="menu-link">ครูผู้สอน</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero reveal" id="top">
+            <div class="container">
+                <span class="pill">ผลงานนักศึกษา • IoT</span>
+                <h1>Sound Sensor Light Control</h1>
+                <p>โครงงานควบคุมการเปิด-ปิดไฟด้วยเสียง ใช้ Arduino รับสัญญาณจากเซนเซอร์เสียง แล้วสั่งรีเลย์ให้ต่อวงจรหลอดไฟ</p>
+            </div>
+        </section>
+
+        <section class="reveal" id="equipment">
+            <div class="container">
+                <h2>อุปกรณ์ที่ใช้</h2>
+                <div class="card box">
+                    <p>โครงงานนี้ใช้ชิ้นส่วนหลัก 4 ชนิด ได้แก่ บอร์ด Arduino Uno เซนเซอร์เสียง โมดูลรีเลย์หนึ่งช่อง และหลอด LED (หรือโคมไฟ) รายละเอียดและภาพอุปกรณ์ดังนี้</p>
+                </div>
+                <div class="equipment-grid">
+                    <div class="card feature equipment-card">
+                        <h3>1. Arduino Uno</h3>
+                        <p>บอร์ดไมโครคอนโทรลเลอร์หลัก ใช้รับสัญญาณจากเซนเซอร์และส่งสัญญาณไปควบคุมรีเลย์ มีขา Digital (PWM) และ Analog In สำหรับต่อกับเซนเซอร์และอุปกรณ์อื่น</p>
+                        <div class="equipment-img-wrap">
+                            <img src="assets/sound-sensor/arduino-uno.png" alt="บอร์ด Arduino Uno" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="card feature equipment-card">
+                        <h3>2. เซนเซอร์เสียง (Sound Sensor Module)</h3>
+                        <p>โมดูลไมโครโฟนอิเล็กเตรท (electret microphone) มีตัวปรับความไว (potentiometer) และวงจรขยายสัญญาณ (เช่น LM393) ต่อ VCC, GND และขาสัญญาณ (DO/AO) กับ Arduino เพื่อตรวจจับเสียง</p>
+                        <div class="equipment-img-wrap">
+                            <img src="assets/sound-sensor/sound-sensor.png" alt="โมดูลเซนเซอร์เสียง" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="card feature equipment-card">
+                        <h3>3. โมดูลรีเลย์ 1 ช่อง (Single-Channel Relay)</h3>
+                        <p>ใช้สัญญาณจาก Arduino (แรงดันต่ำ) เปิด/ปิดวงจรไฟบ้านหรือหลอดไฟ ด้านควบคุมมีขา VCC, GND, IN ด้านออกแรงมี NO, COM, NC (แบบ 12VDC 10A) สำหรับต่อกับโหลด เช่น หลอดไฟ</p>
+                        <div class="equipment-img-wrap">
+                            <img src="assets/sound-sensor/relay.png" alt="โมดูลรีเลย์หนึ่งช่อง" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="card feature equipment-card">
+                        <h3>4. หลอด LED / โคมไฟ</h3>
+                        <p>หลอดไฟที่ใช้กับไฟฟ้าบ้าน (เช่น E26/E27) ต่อผ่านรีเลย์ เมื่อรีเลย์ทำงาน (ได้สัญญาณจาก Arduino ตามเสียง) ไฟจะติดหรือดับตามที่โปรแกรมกำหนด</p>
+                        <div class="equipment-img-wrap">
+                            <img src="assets/sound-sensor/led-bulb.png" alt="หลอด LED" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal" id="code">
+            <div class="container">
+                <h2>ตัวอย่างโค้ดโปรแกรม Arduino Uno</h2>
+                <div class="card box code-box">
+                    <pre class="code-block"><code>int soundPin = 2;   // ช่องต่อไปเซนเซอร์
+int relayPin = 3;   // ช่องต่อไปรีเลย์
+
+bool lampState = false;
+unsigned long lastTrigger = 0;
+
+void setup() {
+  pinMode(soundPin, INPUT);
+  pinMode(relayPin, OUTPUT);
+  digitalWrite(relayPin, HIGH); // เริ่มปิด
+  Serial.begin(9600);
+}
+
+void loop() {
+  int soundValue = digitalRead(soundPin);
+
+  // มีเสียง
+  if (soundValue == LOW && millis() - lastTrigger > 1500) {
+    lampState = !lampState;
+
+    if (lampState) {
+      digitalWrite(relayPin, LOW);   // เปิด
+      Serial.println("ON");
+    } else {
+      digitalWrite(relayPin, HIGH);   // ปิด
+      Serial.println("OFF");
+    }
+
+    lastTrigger = millis(); // ล็อค 1.5 วินาที
+  }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal" id="howto">
+            <div class="container">
+                <h2>วิธีทำ</h2>
+                <div class="card box">
+                    <ol class="list list-numbers">
+                        <li><strong>ต่อวงจร</strong><br>
+                            เซนเซอร์เสียง: VCC → 5V, GND → GND, ขาสัญญาณ (DO หรือ AO) → ขา Digital ของ Arduino (เช่น D2)<br>
+                            รีเลย์: VCC → 5V (หรือแหล่งจ่ายภายนอกถ้าตามโมดูล), GND → GND, IN → ขา Digital (เช่น D3)<br>
+                            หลอดไฟต่อกับแหล่งจ่าย AC ผ่านขา NO และ COM ของรีเลย์ (ต้องทำตามคู่มือรีเลย์และระวังไฟฟ้า)
+                        </li>
+                        <li><strong>เขียนโปรแกรม Arduino</strong><br>
+                            ตั้งค่า pin เซนเซอร์เป็น input และ pin รีเลย์เป็น output อ่านค่าจากเซนเซอร์เสียง ถ้าค่าเกินเกณฑ์ที่กำหนด (มีเสียง) ให้ส่งสัญญาณ HIGH ไปที่ pin รีเลย์เพื่อเปิดไฟ หรือใช้ logic เปิด/ปิดสลับเมื่อได้ยินเสียง (clap to toggle)
+                        </li>
+                        <li><strong>ปรับความไว</strong><br>
+                            ใช้ปุ่มปรับบนโมดูลเซนเซอร์เสียง (potentiometer) ปรับจนตรวจจับเสียงได้ตามต้องการและไม่ติดเสียงรบกวน
+                        </li>
+                        <li><strong>ทดสอบ</strong><br>
+                            อัปโหลดโปรแกรมลง Arduino แล้วทดสอบตบมือหรือส่งเสียง ตรวจว่าไฟเปิด/ปิดตามที่ตั้งค่า
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal" id="docs">
+            <div class="container">
+                <h2>เอกสาร / ไฟล์โครงงาน</h2>
+                <div class="card box">
+                    <p>เอกสารและไฟล์ที่เกี่ยวข้องกับโครงงาน Sound Sensor Light Control เก็บไว้ใน Google Drive ดังลิงก์ด้านล่าง</p>
+                    <p class="link-drive">
+                        <a href="https://drive.google.com/drive/mobile/folders/1rvKWAEiZqkeFMs6c-G8czvcQgLTpAiyc?usp=sharing" target="_blank" rel="noopener">เปิดโฟลเดอร์ Sound Sensor Light Control บน Google Drive</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="fence" aria-hidden="true"></div>
+    <footer>
+        <div class="container center">
+            <p><a href="หน้าแรก.html">← กลับหน้าแรก</a></p>
+            <p><a href="https://drive.google.com/drive/mobile/folders/1rvKWAEiZqkeFMs6c-G8czvcQgLTpAiyc?usp=sharing" target="_blank" rel="noopener">Sound Sensor Light Control (Google Drive)</a></p>
+            <p class="small">แผนกเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคพิมาย • เว็บไซต์นี้จัดทำเพื่อการศึกษา</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('menuToggle');
+            var menu = document.getElementById('mainMenu');
+            var links = document.querySelectorAll('.menu-link');
+            if (!toggle || !menu) return;
+            function open() { menu.classList.add('is-open'); toggle.setAttribute('aria-expanded', 'true'); toggle.setAttribute('aria-label', 'ปิดเมนู'); }
+            function close() { menu.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'เปิดเมนู'); }
+            toggle.addEventListener('click', function () { if (menu.classList.contains('is-open')) close(); else open(); });
+            links.forEach(function (a) { a.addEventListener('click', function () { close(); }); });
+        })();
+    </script>
+    <script>
+        (function () {
+            var container = document.getElementById('snowContainer');
+            if (!container) return;
+            for (var i = 0; i < 55; i++) {
+                var flake = document.createElement('span');
+                flake.className = 'snowflake';
+                flake.style.left = Math.random() * 100 + '%';
+                flake.style.animationDelay = (Math.random() * 12) + 's';
+                flake.style.animationDuration = (5 + Math.random() * 12) + 's';
+                flake.style.opacity = (0.35 + Math.random() * 0.5).toFixed(2);
+                flake.style.fontSize = (8 + Math.random() * 14) + 'px';
+                container.appendChild(flake);
+            }
+        })();
+    </script>
+    <script>
+    function reveal(){
+      var reveals = document.querySelectorAll(".reveal");
+
+      for(var i=0;i<reveals.length;i++){
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 80;
+
+        if(elementTop < windowHeight - elementVisible){
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+    </script>
+</body>
+
+</html>
