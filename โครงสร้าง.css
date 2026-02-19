@@ -239,7 +239,12 @@ a.feature.card {
     color: var(--gray);
     margin: 0;
 }
-
+/* เอฟเฟกต์ชี้เมาส์ให้การ์ดทักษะ */
+a.feature.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+    background: linear-gradient(135deg, #dff1ff, #c6e6f8);
+}
 /* ========== SECTIONS ========== */
 section {
     padding: var(--space-section) 0;
