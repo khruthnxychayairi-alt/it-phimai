@@ -812,15 +812,17 @@ a {
     box-shadow:0 14px 35px rgba(0,149,255,0.65);
 }
 
-/* แสดงเนื้อหาแบบคงที่ ไม่เลื่อน/ลื่นตามสกรอลล์ */
+/* ===== เอฟเฟกต์แสดงตอนเลื่อน ===== */
 .reveal{
-  opacity:1;
-  transform:none;
-  transition:none;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.9s ease;
 }
 
 .reveal.active{
   opacity:1;
-  transform:none;
+  transform:translateY(0);
 }
+
+
 
