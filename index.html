@@ -381,24 +381,35 @@
         })();
     </script>
 
+	<script>
+	function reveal(){
+  	var reveals = document.querySelectorAll(".reveal");
+
+  	for(var i=0;i<reveals.length;i++){
+    	var windowHeight = window.innerHeight;
+    	var elementTop = reveals[i].getBoundingClientRect().top;
+    	var elementVisible = 80;
+
+    	if(elementTop < windowHeight - elementVisible){
+      	reveals[i].classList.add("active");
+    		}
+  		}
+	}
+	window.addEventListener("scroll", reveal);
+	window.addEventListener("load", reveal);
+	</script>
+	<!-- ปิดการเลื่อนตำแหน่งอัตโนมัติของเบราว์เซอร์เวลารีเฟรช/ย้อนกลับ -->
 <script>
-function reveal(){
-  var reveals = document.querySelectorAll(".reveal");
-
-  for(var i=0;i<reveals.length;i++){
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 80;
-
-    if(elementTop < windowHeight - elementVisible){
-      reveals[i].classList.add("active");
+  (function () {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
     }
-  }
-}
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 0);
+    });
+  })();
 </script>
-
+	
 </body>
 
 </html>
