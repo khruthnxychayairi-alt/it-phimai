@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#5a9fd4">
+    <meta name="description" content="การเขียนโปรแกรม - HTML, CSS, JavaScript, Python, C# | แผนกเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคพิมาย">
+    <title>การเขียนโปรแกรม - แผนกเทคโนโลยีสารสนเทศ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="โครงสร้าง.css">
+</head>
+
+<body>
+    <div class="snow" id="snowContainer" aria-hidden="true"></div>
+    <div class="barn" aria-hidden="true"></div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="brand">
+                    <div class="logo">IT</div>
+                    <div>แผนกเทคโนโลยีสารสนเทศ • วิทยาลัยเทคนิคพิมาย</div>
+                </div>
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false">
+                    <span class="icon-open" aria-hidden="true">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </span>
+                    <span class="icon-close" aria-hidden="true">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </span>
+                </button>
+                <div class="menu" id="mainMenu">
+                    <a href="หน้าแรก.html" class="menu-link">หน้าแรก</a>
+                    <a href="หน้าแรก.html#about" class="menu-link">เกี่ยวกับแผนก</a>
+                    <a href="หน้าแรก.html#courses" class="menu-link">หลักสูตร</a>
+                    <a href="หน้าแรก.html#projects" class="menu-link">ผลงานนักศึกษา</a>
+                    <a href="หน้าแรก.html#teachers" class="menu-link">ครูผู้สอน</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="top">
+            <div class="container">
+                <span class="pill">ทักษะ</span>
+                <h1>การเขียนโปรแกรม</h1>
+                <p>เรียนรู้ภาษาที่ใช้ในแผนกเทคโนโลยีสารสนเทศ: HTML, CSS, JavaScript, Python และ C#</p>
+            </div>
+        </section>
+
+        <section id="html">
+            <div class="container">
+                <h2>HTML</h2>
+                <div class="card box">
+                    <p><strong>HTML</strong> (HyperText Markup Language) เป็นภาษามาร์กอัปสำหรับสร้างโครงสร้างเว็บเพจ ใช้กำหนดหัวข้อ ย่อหน้า รูปภาพ ลิงก์ ตาราง และฟอร์ม</p>
+                    <ul class="list">
+                        <li>เป็นพื้นฐานของทุกเว็บไซต์</li>
+                        <li>ทำงานร่วมกับ CSS (จัดรูปแบบ) และ JavaScript (ทำให้มีปฏิสัมพันธ์)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="css">
+            <div class="container">
+                <h2>CSS</h2>
+                <div class="card box">
+                    <p><strong>CSS</strong> (Cascading Style Sheets) ใช้จัดรูปแบบและตกแต่งเว็บเพจ เช่น สี ฟอนต์ การจัดวาง เลย์เอาต์ และการแสดงผลบนจอขนาดต่างๆ (Responsive)</p>
+                    <ul class="list">
+                        <li>แยกการออกแบบออกจากเนื้อหา (HTML)</li>
+                        <li>ทำให้เว็บสวยงามและใช้งานง่ายบนมือถือ</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="javascript">
+            <div class="container">
+                <h2>JavaScript</h2>
+                <div class="card box">
+                    <p><strong>JavaScript</strong> เป็นภาษาสคริปต์ที่รันบนเบราว์เซอร์ ใช้ทำให้เว็บมีปฏิสัมพันธ์ เช่น ปุ่มกด แบบฟอร์ม แอนิเมชัน และเชื่อมต่อกับ API</p>
+                    <ul class="list">
+                        <li>ใช้ทั้งฝั่งเว็บ (Frontend) และฝั่งเซิร์ฟเวอร์ (Node.js)</li>
+                        <li>เป็นหนึ่งในภาษาที่นิยมที่สุดสำหรับพัฒนาเว็บ</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="python">
+            <div class="container">
+                <h2>Python</h2>
+                <div class="card box">
+                    <p><strong>Python</strong> เป็นภาษาระดับสูง อ่านง่าย เหมาะกับผู้เริ่มต้น ใช้ได้หลายงาน เช่น เขียนสคริปต์ วิเคราะห์ข้อมูล AI/ML และพัฒนาเว็บ (Django, Flask)</p>
+                    <ul class="list">
+                        <li>ไวยากรณ์ชัดเจน เรียนรู้เร็ว</li>
+                        <li>ใช้ในหลักสูตรการเขียนโปรแกรมและโปรเจกต์จริง</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="csharp">
+            <div class="container">
+                <h2>C#</h2>
+                <div class="card box">
+                    <p><strong>C#</strong> (C Sharp) เป็นภาษาของ Microsoft ใช้พัฒนาแอป Windows เว็บ (ASP.NET) และเกม (Unity)</p>
+                    <ul class="list">
+                        <li>เป็นภาษาที่มี type ชัดเจน เหมาะกับการพัฒนาโปรแกรมขนาดใหญ่</li>
+                        <li>ใช้ในวิชาที่เกี่ยวกับการพัฒนาแอปพลิเคชันและเกม</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="fence" aria-hidden="true"></div>
+    <footer>
+        <div class="container center">
+            <p><a href="หน้าแรก.html">← กลับหน้าแรก</a></p>
+            <p class="small">แผนกเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคพิมาย • เว็บไซต์นี้จัดทำเพื่อการศึกษา</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('menuToggle');
+            var menu = document.getElementById('mainMenu');
+            var links = document.querySelectorAll('.menu-link');
+            if (!toggle || !menu) return;
+            function open() { menu.classList.add('is-open'); toggle.setAttribute('aria-expanded', 'true'); toggle.setAttribute('aria-label', 'ปิดเมนู'); }
+            function close() { menu.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'เปิดเมนู'); }
+            toggle.addEventListener('click', function () { if (menu.classList.contains('is-open')) close(); else open(); });
+            links.forEach(function (a) { a.addEventListener('click', function () { close(); }); });
+        })();
+    </script>
+    <script>
+        (function () {
+            var container = document.getElementById('snowContainer');
+            if (!container) return;
+            for (var i = 0; i < 55; i++) {
+                var flake = document.createElement('span');
+                flake.className = 'snowflake';
+                flake.style.left = Math.random() * 100 + '%';
+                flake.style.animationDelay = (Math.random() * 12) + 's';
+                flake.style.animationDuration = (5 + Math.random() * 12) + 's';
+                flake.style.opacity = (0.35 + Math.random() * 0.5).toFixed(2);
+                flake.style.fontSize = (8 + Math.random() * 14) + 'px';
+                container.appendChild(flake);
+            }
+        })();
+    </script>
+</body>
+
+</html>
